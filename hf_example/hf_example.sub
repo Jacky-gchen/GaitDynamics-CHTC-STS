@@ -1,0 +1,26 @@
+container_image = osdf:///chtc/staging/g/gchen293/gaitdynamics.sif
+
+executable = run_hf_example.sh
+
+log    = hf_example_$(Cluster).log
+output = hf_example_$(Cluster).out
+error  = hf_example_$(Cluster).err
+
+should_transfer_files = YES
+when_to_transfer_output = ON_EXIT
+
+transfer_input_files = example_mot_complete_kinematics.mot, example_opensim_model.osim, GaitDynamics, run_gaitdynamics.py
+transfer_output_files = example_mot_complete_kinematics_grf_pred___.mot
+
++WantGPULab = true
++GPUJobLength = "short"
+
+request_gpus = 1
+gpus_minimum_capability = 8.0
+gpus_maximum_capability = 8.0
+
+request_cpus = 1
+request_memory = 8GB
+request_disk = 8GB
+
+queue

@@ -1,0 +1,26 @@
+container_image = osdf:///chtc/staging/g/gchen293/gaitdynamics.sif
+
+executable = run_sts_subject2.sh
+
+log    = sts_subject2_$(Cluster).log
+output = sts_subject2_$(Cluster).out
+error  = sts_subject2_$(Cluster).err
+
+should_transfer_files = YES
+when_to_transfer_output = ON_EXIT
+
+transfer_input_files = STS1.mot, LaiArnoldModified2017_poly_withArms_weldHand_scaled.osim, GaitDynamics, run_gaitdynamics.py
+transfer_output_files = STS1_grf_pred___.mot
+
++WantGPULab = true
++GPUJobLength = "short"
+
+request_gpus = 1
+gpus_minimum_capability = 8.0
+gpus_maximum_capability = 8.6
+
+request_cpus = 1
+request_memory = 8GB
+request_disk = 8GB
+
+queue

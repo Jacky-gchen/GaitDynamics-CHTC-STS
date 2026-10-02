@@ -1,0 +1,34 @@
+# GaitDynamics pretrained weights
+*.pt
+
+# Apptainer/Singularity images
+*.sif
+
+# Imported upstream repositories
+GaitDynamics/
+
+# OpenSim geometry
+Geometry/
+
+# HTCondor output
+*.log
+*.out
+*.err
+
+# Python
+__pycache__/
+*.pyc
+
+# matplotlib/cache
+.matplotlib/
+
+# OS/editor
+.DS_Store
+.vscode/
+
+# Large/raw biomechanics data
+*.trc
+
+# Optional generated figures/results
+*.png
+*.tar.gz
